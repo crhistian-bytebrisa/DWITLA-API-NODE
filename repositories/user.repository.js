@@ -2,8 +2,8 @@ import fs from 'fs';
 import { User } from '../models/User.js';
 
 //#region Base de datos simulada
-const dbpath = './datos.json'
-const idpath = './id.json'
+const dbpath = './data/datos.json'
+const idpath = './data/id.json'
 
 if(!fs.existsSync(dbpath))
 {

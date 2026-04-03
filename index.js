@@ -2,14 +2,19 @@ import express from 'express';
 
 import { ExistUser } from './repositories/user.repository.js';
 import { AddUserService, DeleteUserService, GetUserService, GetUsersService, UpdateUserService, ValidateAddUser, ValidateUpdateUser } from './services/user.services.js';
+import { LogMethod } from './middlewares/log.js';
 
 const app = express();
 
 app.use(express.json());
 
 app.use((req,res,next) =>{
-    console.log(req.method)
-    console.log("klk soy el middleware");
+    let start = Date.now();
+
+    res.on('finish', () =>{
+        LogMethod(req, start, res.status)
+    })
+
     next();
 })
 

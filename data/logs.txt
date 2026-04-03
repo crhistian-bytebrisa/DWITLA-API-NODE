@@ -1,0 +1,1 @@
+[{"date":"3/4/2026","method":"GET","url":"/users?page=1&limit=20","params":{"page":"1","limit":"20"},"duration":"20 ms"},{"date":"3/4/2026","method":"GET","url":"/users?page=1&limit=20","params":{"page":"1","limit":"20"},"body":{"fulano":true},"duration":"2 ms"}]
