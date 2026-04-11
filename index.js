@@ -31,6 +31,7 @@ app.get('/users', (req,res) =>{
     return res.json(datausers)
 })
 
+//Endpoint que devuelve un usuario en especifico mediante su ID
 app.get('/users/:id', (req,res) =>{
     let id = req.params.id;
     let user = GetUserService(id); 
@@ -44,9 +45,9 @@ app.get('/users/:id', (req,res) =>{
         res.json(user);
         console.log(`[GET]: Obtener el usuario del ID ${id}.`)
     }
-    
 })
 
+//Endpoint para agregar un usuario
 app.post('/users', (req,res) =>{
     let validate = ValidateAddUser(req.body);
     if(validate[0])
@@ -62,6 +63,8 @@ app.post('/users', (req,res) =>{
     }
 })
 
+
+//Endpoint para actualizar un usuario
 app.put('/users/:id', (req,res) =>{
     let id = req.params.id;
     if(id != req.body.id)
@@ -83,6 +86,7 @@ app.put('/users/:id', (req,res) =>{
     }     
 })
 
+//Endpoint para eliminar un usuario
 app.delete('/users/:id',(req,res) =>{
     let id = req.params.id;
 

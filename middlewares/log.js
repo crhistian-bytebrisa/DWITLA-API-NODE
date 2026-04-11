@@ -1,4 +1,3 @@
-import { time } from 'console';
 import fs from 'fs';
 
 const logpath = './data/logs.txt'
